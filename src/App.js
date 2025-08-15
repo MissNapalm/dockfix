@@ -93,6 +93,9 @@ const App = () => {
       // Open FlowCV resume in a new tab
       window.open("https://flowcv.com/resume/u2ckr5r2ktsk", "_blank", "noopener,noreferrer");
       return;
+    } else if (itemName === "Hacker Typer Game") {
+      setWindows([{ id: Date.now(), title: itemName, content: <HackerTerminal />, width: 676, height: 500 }]);
+      setActiveWindow(itemName);
     } else if (itemName === "About Me") {
       setWindows([{ id: Date.now(), title: itemName, content: <AboutMeContent />, width: 676, height: 624 }]);
       setActiveWindow(itemName);
@@ -100,11 +103,11 @@ const App = () => {
       setWindows([{ id: Date.now(), title: itemName, content: <SkillsContent />, width: 676, height: 624 }]);
       setActiveWindow(itemName);
     } else if (itemName === "Software") {
-      setWindows([{ id: Date.now(), title: itemName, content: <EthicalHacksContent />, width: 676, height: 624 }]);
+      setWindows([{ id: Date.now(), title: itemName, content: <EthicalHacksContent />, width: 636, height: 624 }]);
       setActiveWindow(itemName);
     } else if (itemName === "Security") {
-  setWindows([{ id: Date.now(), title: itemName, content: <SecurityContent />, width: 676, height: 624 }]);
-  setActiveWindow(itemName);
+      setWindows([{ id: Date.now(), title: itemName, content: <SecurityContent />, width: 676, height: 624 }]);
+      setActiveWindow(itemName);
     }
   };
 

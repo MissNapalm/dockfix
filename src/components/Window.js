@@ -157,9 +157,15 @@ const Window = ({ title, content, onClose }) => {
           >
             <span style={{
               color: "rgba(255, 255, 255, 0.9)",
-              fontSize: "10px",
+              fontSize: "13px",
               fontWeight: "bold",
-              textShadow: "0 1px 1px rgba(0, 0, 0, 0.3)"
+              textShadow: "0 1px 1px rgba(0, 0, 0, 0.3)",
+              lineHeight: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              position: "relative",
+              top: "-1px"
             }}>×</span>
           </button>
         </div>
