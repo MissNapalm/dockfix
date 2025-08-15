@@ -13,6 +13,7 @@ import {
   EthicalHacksContent,
   NonprofitContent,
   SettingsContent,
+  SecurityContent,
 } from "./components/WindowContent";
 import "./App.css";
 
@@ -102,8 +103,8 @@ const App = () => {
       setWindows([{ id: Date.now(), title: itemName, content: <EthicalHacksContent />, width: 676, height: 624 }]);
       setActiveWindow(itemName);
     } else if (itemName === "Security") {
-      setWindows([{ id: Date.now(), title: itemName, content: <div style={{padding:32, color:'#fff'}}>Security window content goes here.</div>, width: 676, height: 624 }]);
-      setActiveWindow(itemName);
+  setWindows([{ id: Date.now(), title: itemName, content: <SecurityContent />, width: 676, height: 624 }]);
+  setActiveWindow(itemName);
     }
   };
 

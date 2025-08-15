@@ -1,4 +1,77 @@
-import React from "react";
+export const SecurityContent = () => (
+  <div style={{ padding: '30px', color: '#ffffff', background: '#1e1e1e', fontFamily: 'Segoe UI, -apple-system, BlinkMacSystemFont, system-ui, sans-serif', lineHeight: 1.6 }}>
+    <div style={{ textAlign: 'center', marginBottom: 25 }}>
+      <h1 style={{ fontSize: 24, marginBottom: 8, color: '#fff', fontWeight: 600 }}>Cybersecurity Expertise</h1>
+      <p style={{ fontSize: 14, color: '#cccccc', maxWidth: 600, margin: '0 auto' }}>
+        Comprehensive security research, red team operations, and defensive strategies. Experienced in penetration testing, malware research, digital forensics, and blue team defense.
+      </p>
+    </div>
+    <div style={{ display: 'grid', gap: 20, marginBottom: 25 }}>
+      <div style={{ background: '#252526', padding: 20, borderRadius: 8, border: '1px solid #3e3e42' }}>
+        <h3 style={{ fontSize: 16, marginBottom: 10, color: '#0e639c', fontWeight: 600 }}>Penetration Testing & Red Team Operations</h3>
+        <p style={{ fontSize: 13, color: '#cccccc', marginBottom: 12, lineHeight: 1.5 }}>
+          Advanced exploitation techniques, bypassing fully patched Windows 11 systems, privilege escalation, lateral movement, and persistence mechanisms.
+        </p>
+        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+          {['Network Exploitation', 'Windows Evasion', 'Privilege Escalation', 'Persistence Techniques'].map(skill => (
+            <span key={skill} style={{ padding: '4px 8px', borderRadius: 4, background: '#0e639c', fontSize: 11, color: '#fff', border: '1px solid #1177bb', fontWeight: 400 }}>{skill}</span>
+          ))}
+        </div>
+      </div>
+      <div style={{ background: '#252526', padding: 20, borderRadius: 8, border: '1px solid #3e3e42' }}>
+        <h3 style={{ fontSize: 16, marginBottom: 10, color: '#0e639c', fontWeight: 600 }}>Custom Malware Research & Development</h3>
+        <p style={{ fontSize: 13, color: '#cccccc', marginBottom: 12, lineHeight: 1.5 }}>
+          Developed "GhostKey" (RAT) with screenshot exfiltration, C-transpiled Python implants for AV evasion, and HTTPS interception labs.
+        </p>
+        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+          {['Python → C Transpilation', 'AV Evasion', 'C2 Infrastructure', 'Custom RAT Development'].map(skill => (
+            <span key={skill} style={{ padding: '4px 8px', borderRadius: 4, background: '#0e639c', fontSize: 11, color: '#fff', border: '1px solid #1177bb', fontWeight: 400 }}>{skill}</span>
+          ))}
+        </div>
+      </div>
+      <div style={{ background: '#252526', padding: 20, borderRadius: 8, border: '1px solid #3e3e42' }}>
+        <h3 style={{ fontSize: 16, marginBottom: 10, color: '#0e639c', fontWeight: 600 }}>Mobile & Network Security</h3>
+        <p style={{ fontSize: 13, color: '#cccccc', marginBottom: 12, lineHeight: 1.5 }}>
+          Android 14 penetration testing, HTTPS/DNS interception, deauth attacks, and comprehensive network analysis.
+        </p>
+        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+          {['Android Exploitation', 'HTTPS Interception', 'DNS Manipulation', 'WiFi Security'].map(skill => (
+            <span key={skill} style={{ padding: '4px 8px', borderRadius: 4, background: '#0e639c', fontSize: 11, color: '#fff', border: '1px solid #1177bb', fontWeight: 400 }}>{skill}</span>
+          ))}
+        </div>
+      </div>
+      <div style={{ background: '#252526', padding: 20, borderRadius: 8, border: '1px solid #3e3e42' }}>
+        <h3 style={{ fontSize: 16, marginBottom: 10, color: '#0e639c', fontWeight: 600 }}>Digital Forensics & Blue Team</h3>
+        <p style={{ fontSize: 13, color: '#cccccc', marginBottom: 12, lineHeight: 1.5 }}>
+          Network traffic analysis, malware reverse engineering, incident response, and defensive security strategies.
+        </p>
+        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+          {['Traffic Analysis', 'Malware Analysis', 'Incident Response', 'DFIR'].map(skill => (
+            <span key={skill} style={{ padding: '4px 8px', borderRadius: 4, background: '#0e639c', fontSize: 11, color: '#fff', border: '1px solid #1177bb', fontWeight: 400 }}>{skill}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+    <div style={{ background: '#252526', padding: 20, borderRadius: 8, border: '1px solid #3e3e42', marginBottom: 20 }}>
+      <h3 style={{ fontSize: 16, marginBottom: 10, color: '#0e639c', fontWeight: 600 }}>Security Tools & Technologies</h3>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: 8, marginBottom: 15 }}>
+        {['OWASP ZAP', 'SQLMap', 'Burp Suite', 'Metasploit', 'mitmproxy', 'Wireshark', 'Nmap', 'Hashcat'].map(tool => (
+          <span key={tool} style={{ padding: '6px 10px', borderRadius: 4, background: '#1e1e1e', fontSize: 12, color: '#cccccc', border: '1px solid #3e3e42', textAlign: 'center', fontWeight: 400 }}>{tool}</span>
+        ))}
+      </div>
+      <p style={{ fontSize: 13, color: '#cccccc', lineHeight: 1.5 }}>
+        Extensive experience with industry-standard security tools for vulnerability assessment, network analysis, and penetration testing across multiple platforms and environments.
+      </p>
+    </div>
+    <div style={{ background: '#252526', padding: 20, borderRadius: 8, border: '1px solid #3e3e42' }}>
+      <h3 style={{ fontSize: 16, marginBottom: 10, color: '#0e639c', fontWeight: 600 }}>Security Philosophy</h3>
+      <p style={{ fontSize: 13, color: '#cccccc', lineHeight: 1.6, fontStyle: 'italic' }}>
+        "Security isn't just about protecting systems—it's about protecting people. Having witnessed firsthand how easily privacy can evaporate in our digital age, I believe vigilance and proactive security measures are essential to preserving human dignity and freedom in cyberspace."
+      </p>
+    </div>
+  </div>
+);
+
 
 
 export const AboutMeContent = () => (
