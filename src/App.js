@@ -92,34 +92,17 @@ const App = () => {
       // Open FlowCV resume in a new tab
       window.open("https://flowcv.com/resume/u2ckr5r2ktsk", "_blank", "noopener,noreferrer");
       return;
-    } else {
-      // Create window for standard dock items
-      let content;
-      switch (itemName) {
-        case "About Me":
-          content = <AboutMeContent />;
-          break;
-        case "Skills":
-          content = <SkillsContent />;
-          break;
-        case "Software":
-          content = <EthicalHacksContent />;
-          break;
-        case "Security":
-          content = <NonprofitContent />;
-          break;
-        default:
-          content = <div>Content not found</div>;
-      }
-      
-      // 30% bigger (520x480 → 676x624)
-      setWindows([{
-        id: Date.now(),
-        title: itemName,
-        content: content,
-        width: 676,
-        height: 624
-      }]);
+    } else if (itemName === "About Me") {
+      setWindows([{ id: Date.now(), title: itemName, content: <AboutMeContent />, width: 676, height: 624 }]);
+      setActiveWindow(itemName);
+    } else if (itemName === "Skills") {
+      setWindows([{ id: Date.now(), title: itemName, content: <SkillsContent />, width: 676, height: 624 }]);
+      setActiveWindow(itemName);
+    } else if (itemName === "Software") {
+      setWindows([{ id: Date.now(), title: itemName, content: <EthicalHacksContent />, width: 676, height: 624 }]);
+      setActiveWindow(itemName);
+    } else if (itemName === "Security") {
+      setWindows([{ id: Date.now(), title: itemName, content: <div style={{padding:32, color:'#fff'}}>Security window content goes here.</div>, width: 676, height: 624 }]);
       setActiveWindow(itemName);
     }
   };
@@ -381,7 +364,8 @@ const App = () => {
                   }}
                 />
               ),
-              content: "Security Content"
+              content: "Security Content",
+              // No window logic for Security
             },
             { 
               name: "Resume",

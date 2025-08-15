@@ -1,0 +1,36 @@
+import React from "react";
+import SecurityWindow from "./components/SecurityWindow";
+import Window from "./components/Window";
+import WindowContent_Fixed from "./components/WindowContent_Fixed";
+
+// ...existing code...
+
+// Replace this in your windows rendering logic:
+// {fadeInStage >= 2 &&
+//   windows.map((win) => (
+//     <Window ... />
+//   ))}
+
+// With this:
+{fadeInStage >= 2 &&
+  windows.map((win) =>
+    win.title === "Security" ? (
+      <SecurityWindow
+        key={win.id}
+        onClose={() => closeWindow(win.id)}
+        content={<WindowContent_Fixed />}
+      />
+    ) : (
+      <Window
+        key={win.id}
+        title={win.title}
+        content={win.content}
+        width={win.width}
+        height={win.height}
+        onClose={() => closeWindow(win.id)}
+      />
+    )
+  )
+}
+
+// ...existing code...

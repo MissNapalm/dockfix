@@ -165,62 +165,135 @@ const Window = ({ title, content, onClose }) => {
         </div>
       </div>
 
-      {/* Window Content with integrated resize corner */}
-      <div
-        className="window-content"
-        style={{
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-          minHeight: 0,
-          color: "rgba(255, 255, 255, 0.92)",
-          fontSize: "14px",
-          fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-          background: `
-            linear-gradient(135deg, transparent 0%, transparent calc(100% - 30px), rgba(255, 255, 255, 0.08) calc(100% - 25px), rgba(255, 255, 255, 0.04) 100%),
-            linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 0, 0, 0.1) 100%)
-          `,
-          position: "relative",
-          lineHeight: "1.6",
-          borderBottomLeftRadius: "20px",
-          borderBottomRightRadius: "20px",
-        }}
-      >
-        {/* Scrollable content area */}
+      {/* Window Content - SINGLE content area for Security windows */}
+      {title === 'Security' ? (
+        // For Security window: single scrollable container with hidden scrollbar
         <div
+          className="hide-scrollbar"
           style={{
             flex: 1,
             minHeight: 0,
             overflow: "auto",
-            width: "100%",
-            boxSizing: "border-box",
             padding: "24px",
-            display: "flex",
-            flexDirection: "column",
+            color: "rgba(255, 255, 255, 0.92)",
+            fontSize: "14px",
+            fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+            background: `
+              linear-gradient(135deg, transparent 0%, transparent calc(100% - 30px), rgba(255, 255, 255, 0.08) calc(100% - 25px), rgba(255, 255, 255, 0.04) 100%),
+              linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 0, 0, 0.1) 100%)
+            `,
+            lineHeight: "1.6",
+            borderBottomLeftRadius: "20px",
+            borderBottomRightRadius: "20px",
+            position: "relative"
           }}
         >
           {typeof content === "string" ? (
-            <div style={{ flex: 1 }} dangerouslySetInnerHTML={{ __html: content }} />
+            <div dangerouslySetInnerHTML={{ __html: content }} />
           ) : (
-            <div style={{ flex: 1 }}>{content}</div>
+            content
           )}
+          
+          {/* Resize handle for Security window */}
+          <div
+            className="resize-handle"
+            style={{
+              width: "16px",
+              height: "16px",
+              cursor: "se-resize",
+              position: "absolute",
+              bottom: "2px",
+              right: "2px",
+              zIndex: 1001,
+              userSelect: "none",
+              background: "transparent",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
+            }}
+            onMouseDown={handleResizeStart}
+          >
+            {/* Diagonal lines */}
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <line x1="2" y1="10" x2="10" y2="2" stroke="rgba(255,255,255,0.6)" strokeWidth="1" strokeLinecap="round"/>
+              <line x1="4" y1="10" x2="10" y2="4" stroke="rgba(255,255,255,0.6)" strokeWidth="1" strokeLinecap="round"/>
+              <line x1="6" y1="10" x2="10" y2="6" stroke="rgba(255,255,255,0.6)" strokeWidth="1" strokeLinecap="round"/>
+              <line x1="8" y1="10" x2="10" y2="8" stroke="rgba(255,255,255,0.6)" strokeWidth="1" strokeLinecap="round"/>
+            </svg>
+          </div>
         </div>
-
-        {/* Resize handle OUTSIDE scroll area */}
+      ) : (
+        // For all other windows: nested container structure
         <div
-          className="resize-handle"
+          className="window-content"
           style={{
-            width: "28px",
-            height: "28px",
-            cursor: "se-resize",
-            alignSelf: "flex-end",
-            zIndex: 1001,
-            borderBottomRightRadius: "19px",
-            userSelect: "none"
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            minHeight: 0,
+            color: "rgba(255, 255, 255, 0.92)",
+            fontSize: "14px",
+            fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+            background: `
+              linear-gradient(135deg, transparent 0%, transparent calc(100% - 30px), rgba(255, 255, 255, 0.08) calc(100% - 25px), rgba(255, 255, 255, 0.04) 100%),
+              linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 0, 0, 0.1) 100%)
+            `,
+            position: "relative",
+            lineHeight: "1.6",
+            borderBottomLeftRadius: "20px",
+            borderBottomRightRadius: "20px",
+            overflow: "hidden"
           }}
-          onMouseDown={handleResizeStart}
-        />
-      </div>
+        >
+          {/* Scrollable content area for non-Security windows */}
+          <div
+            style={{
+              flex: 1,
+              minHeight: 0,
+              overflow: "auto",
+              width: "100%",
+              boxSizing: "border-box",
+              padding: "24px",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            {typeof content === "string" ? (
+              <div style={{ flex: 1 }} dangerouslySetInnerHTML={{ __html: content }} />
+            ) : (
+              <div style={{ flex: 1 }}>{content}</div>
+            )}
+          </div>
+
+          {/* Resize handle for non-Security windows */}
+          <div
+            className="resize-handle"
+            style={{
+              width: "16px",
+              height: "16px",
+              cursor: "se-resize",
+              position: "absolute",
+              bottom: "2px",
+              right: "2px",
+              zIndex: 1001,
+              userSelect: "none",
+              background: "transparent",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
+            }}
+            onMouseDown={handleResizeStart}
+          >
+            {/* Diagonal lines */}
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <line x1="2" y1="10" x2="10" y2="2" stroke="rgba(255,255,255,0.6)" strokeWidth="1" strokeLinecap="round"/>
+              <line x1="4" y1="10" x2="10" y2="4" stroke="rgba(255,255,255,0.6)" strokeWidth="1" strokeLinecap="round"/>
+              <line x1="6" y1="10" x2="10" y2="6" stroke="rgba(255,255,255,0.6)" strokeWidth="1" strokeLinecap="round"/>
+              <line x1="8" y1="10" x2="10" y2="8" stroke="rgba(255,255,255,0.6)" strokeWidth="1" strokeLinecap="round"/>
+            </svg>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
