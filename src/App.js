@@ -190,6 +190,8 @@ const App = () => {
                 padding: "20px 50px",
                 fontSize: "24px",
                 color: "white",
+                WebkitFontSmoothing: "antialiased",
+                MozOsxFontSmoothing: "grayscale",
                 backgroundColor: "#1a73e8",
                 border: "none",
                 borderRadius: "50px",
@@ -221,6 +223,8 @@ const App = () => {
           style={{
             fontSize: "5.2rem", // 30% bigger than 4rem
             fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+            WebkitFontSmoothing: "antialiased",
+            MozOsxFontSmoothing: "grayscale",
             fontWeight: "700",
             letterSpacing: "-0.02em",
             textShadow: "0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2)",
@@ -242,6 +246,8 @@ const App = () => {
         <p className="text-white text-center" style={{
           fontSize: "1.1rem",
           fontFamily: "'Inter', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+          WebkitFontSmoothing: "antialiased",
+          MozOsxFontSmoothing: "grayscale",
           fontWeight: "400",
           letterSpacing: "0.02em",
           opacity: "0.9",

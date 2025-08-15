@@ -4,11 +4,15 @@ import mangioneImage from "../images/mangione.png";
 export const AboutMeContent = () => (
   <div style={{
     padding: '30px',
-    color: '#ffffff',
+  color: '#ffffff',
+  WebkitFontSmoothing: "antialiased",
+  MozOsxFontSmoothing: "grayscale",
     maxWidth: '900px',
     margin: '0 auto',
     background: '#1e1e1e',
-    fontFamily: '"Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+  fontFamily: '"Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+  WebkitFontSmoothing: "antialiased",
+  MozOsxFontSmoothing: "grayscale",
     lineHeight: '1.5',
     minHeight: '100%',
   }}>
@@ -39,6 +43,8 @@ export const AboutMeContent = () => (
           fontWeight: '600',
           marginBottom: '6px',
           color: '#ffffff',
+          WebkitFontSmoothing: "antialiased",
+          MozOsxFontSmoothing: "grayscale",
           letterSpacing: '-0.3px',
         }}>
           Sarah Clark
@@ -46,6 +52,8 @@ export const AboutMeContent = () => (
         <h2 style={{
           fontSize: '14px',
           color: '#cccccc',
+          WebkitFontSmoothing: "antialiased",
+          MozOsxFontSmoothing: "grayscale",
           marginBottom: '12px',
           fontWeight: '400',
         }}>
@@ -63,6 +71,8 @@ export const AboutMeContent = () => (
               background: '#0e639c',
               fontSize: '11px',
               color: '#ffffff',
+              WebkitFontSmoothing: "antialiased",
+              MozOsxFontSmoothing: "grayscale",
               border: '1px solid #1177bb',
               fontWeight: '400',
             }}>
@@ -84,13 +94,15 @@ export const AboutMeContent = () => (
         fontSize: '16px', 
         fontWeight: '600', 
         marginBottom: '12px', 
-        color: '#ffffff',
+  color: '#ffffff',
+  WebkitFontSmoothing: "antialiased",
+  MozOsxFontSmoothing: "grayscale",
         borderBottom: '1px solid #3e3e42',
         paddingBottom: '6px'
       }}>
         Professional Summary
       </h3>
-      <p style={{ marginBottom: '10px', color: '#cccccc', fontSize: '13px' }}>
+  <p style={{ marginBottom: '10px', color: '#cccccc', fontSize: '13px', WebkitFontSmoothing: "antialiased", MozOsxFontSmoothing: "grayscale" }}>
         Senior Frontend Developer and Cybersecurity Specialist with 5+ years of experience designing and implementing 
         secure, scalable web applications. Expert in React.js ecosystem, Node.js backend development, and comprehensive 
         security assessment methodologies. Proven track record of delivering high-performance applications while maintaining 

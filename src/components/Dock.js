@@ -126,10 +126,12 @@ const Dock = ({ apps, onAppClick }) => {
               style={{
                 margin: "0",
                 marginTop: "-6px",
-                transition: "all 0.3s ease",
-                transform: "none",
+                transition: "transform 0.25s cubic-bezier(0.4,0,0.2,1)",
+                transform: hoveredIndex === index ? "scale(1.16)" : "scale(1)",
                 position: "relative",
                 zIndex: 2,
+                WebkitFontSmoothing: "antialiased",
+                MozOsxFontSmoothing: "grayscale",
               }}
             >
               {/* Smooth growing/fading glow effect */}
@@ -184,7 +186,7 @@ const Dock = ({ apps, onAppClick }) => {
             <span
               style={{
                 color: "white",
-                fontSize: "17px",
+                fontSize: "19px",
                 marginTop: "-6px",
                 opacity: hoveredIndex === index ? 1 : 0.7,
                 transition: "all 0.3s ease",
